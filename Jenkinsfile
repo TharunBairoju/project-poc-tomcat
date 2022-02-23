@@ -42,7 +42,8 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh "mvn spring-boot:run"
+            	sh "sudo kill -9 `sudo lsof -t -i:8088"
+                nohup sh "mvn spring-boot:run"
             }
         }
     }
